@@ -21,8 +21,13 @@
     "strictPropertyInitialization": false,
     "typeRoots": [
       "./node_modules/@types"
-    ]
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "/opt/nodejs/aws-sdk": ["./layers/nodejs/node_modules/aws-sdk"]
+    }
   },
+
   "exclude": [
     "node_modules",
     "cdk.out"
