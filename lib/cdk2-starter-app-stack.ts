@@ -13,10 +13,17 @@ export class Cdk2StarterAppStack extends Stack {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
 
-  const mylambda = new lambda.Function(this,'MyFunction', {
-    runtime: lambda.Runtime.NODEJS_14_X,
-    code: lambda.Code.fromAsset('lambdas'),
-    handler: 'app.handler'
-  });
+
+    const layerAWS = new lambda.LayerVersion(this, 'MyLayer', {
+      code: lambda.Code.fromAsset('./layers'),
+      compatibleRuntimes: [lambda.Runtime.NODEJS_14_X]
+
+    })
+    const mylambda = new lambda.Function(this, 'MyFunction', {
+      runtime: lambda.Runtime.NODEJS_14_X,
+      code: lambda.Code.fromAsset('lambdas',{exclude:['*.ts']}),
+      handler: 'app.handler',
+      layers: [layerAWS]
+    })
   }
 }
