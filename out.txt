@@ -1,0 +1,1 @@
+{"statusCode":200,"body":"{\"items\":[\"uno\",\"dos\",\"tres\"],\"uuid\":\"aed6d98d-1b8e-4a38-905a-d694ac0f13d3\"}"}

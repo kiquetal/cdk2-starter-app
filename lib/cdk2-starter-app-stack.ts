@@ -12,9 +12,11 @@ export class Cdk2StarterAppStack extends Stack {
     // const queue = new sqs.Queue(this, 'Cdk2StarterAppQueue', {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
-  
-  const mylambda = new lambda.Function(this,'MyFunction', {
 
+  const mylambda = new lambda.Function(this,'MyFunction', {
+    runtime: lambda.Runtime.NODEJS_14_X,
+    code: lambda.Code.fromAsset('lambdas'),
+    handler: 'app.handler'
   });
   }
 }
