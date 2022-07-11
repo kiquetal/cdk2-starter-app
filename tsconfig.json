@@ -28,9 +28,8 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "/opt/nodejs/uuid": ["./layers/nodejs/node_modules/uuid"],
       "/opt/nodejs/accounts": ["./layers/nodejs/accounts"],
-
+      "@uuid": ["./layers/nodejs/node_modules/uuid"],
     }
   },
 
